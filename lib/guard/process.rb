@@ -1,5 +1,3 @@
-require 'guard'
-require 'guard/plugin'
 require 'spoon'
 
 module Guard
@@ -13,7 +11,7 @@ module Guard
       @dir = options[:dir] || Dir.getwd
       @stop_signal = options[:stop_signal] || "TERM"
       @dont_stop = options[:dont_stop]
-      super
+      super(options)
     end
 
     def wait_for_stop?
